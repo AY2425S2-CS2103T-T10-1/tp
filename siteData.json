@@ -10,7 +10,7 @@
         "hibiki": "Hibiki",
         "russell": "Russell",
         "samuel": "Samuel",
-        "jean-doe": "Jean Doe",
+        "yi-kai": "Yi Kai",
         "james-doe": "James Doe"
       },
       "headingKeywords": {}
@@ -148,6 +148,13 @@
       "title": "John Doe's Project Portfolio Page",
       "headings": {
         "project-addressbook-level-3": "Project: AddressBook Level 3"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/kai824.md",
+      "headings": {
+        "placeholder-about-us-for-yi-kai": "Placeholder about us for Yi Kai"
       },
       "headingKeywords": {}
     },
