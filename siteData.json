@@ -11,7 +11,7 @@
         "russell": "Russell",
         "samuel": "Samuel",
         "yi-kai": "Yi Kai",
-        "james-doe": "James Doe"
+        "zihan": "Zihan"
       },
       "headingKeywords": {}
     },
@@ -156,6 +156,11 @@
       "headings": {
         "placeholder-about-us-for-yi-kai": "Placeholder about us for Yi Kai"
       },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/ovotter.md",
+      "headings": {},
       "headingKeywords": {}
     },
     {
