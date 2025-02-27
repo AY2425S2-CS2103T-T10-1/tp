@@ -337,8 +337,12 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Glossary
 
-* **Mainstream OS**: Windows, Linux, Unix, MacOS
-* **Private contact detail**: A contact detail that is not meant to be shared with others
+* **Attribute**: A key-value pair associated with a candidate.
+  * For example, `Graduation Year: 2027` is an attribute, where the **attribute name** is `Graduation Year` and the **attribute value** is `2027`.
+* **Command**: A string of text that the user enters via the command line.
+* **Duplicate**: A string that matches exactly, ignoring case.
+* **Mainstream OS**: Windows, Linux, Unix, MacOS.
+* **Valid name**: Any sequence of whitespace and/or alphabetical characters.
 
 --------------------------------------------------------------------------------------------------------------------
 
