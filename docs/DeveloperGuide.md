@@ -350,8 +350,14 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 1.  Should work on any _mainstream OS_ as long as it has Java `17` or above installed.
 2.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+4.  Logs must be automatically generated.
+5.  Any information related to candidates must remain confidential in the logs.
+6.  Logs must be identical across different operating systems to enable sharing between the same app on different OS platforms.
+7.  The UI has to be clear enough for the user to find the necessary information at a glance.
+8.  The app design should offer flexibility in the tag feature to accommodate unforeseen criteria in the future.
+9.  Copy and paste should be supported in text fields, allowing the user to enter information without typing manually.
+10. The app has to respond within one second.
 
-*{More to be added}*
 
 ### Glossary
 
