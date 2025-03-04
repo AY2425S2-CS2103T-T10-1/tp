@@ -7,3 +7,5 @@
 TalentFolio is an application for hiring managers to manage information on job candidates. It is optimized for users who prefer a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, TalentFolio lets you handle your recruitment tasks more efficiently compared to traditional GUI applications!
 
 For more information, please visit [our website](https://ay2425s2-cs2103t-t10-1.github.io/tp/).
+
+This project is based on the AddressBook-Level3 project created by the [SE-EDU initiative](https://se-education.org).
