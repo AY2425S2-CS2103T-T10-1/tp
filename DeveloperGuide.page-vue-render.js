@@ -227,22 +227,22 @@ with(this){return _c('p',[_c('em',[_v("{More to be added}")])])}
 with(this){return _c('h3',{attrs:{"id":"use-cases"}},[_v("Use cases"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#use-cases","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("(For all use cases below, the "),_c('strong',[_v("System")]),_v(" is the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("AddressBook")]),_v(" and the "),_c('strong',[_v("Actor")]),_v(" is the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("user")]),_v(", unless specified otherwise)")])}
+with(this){return _c('p',[_v("(For all use cases below, the "),_c('strong',[_v("System")]),_v(" is the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("TalentFolio")]),_v(" and the "),_c('strong',[_v("Actor")]),_v(" is the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("user")]),_v(", unless specified otherwise)")])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_c('strong',[_v("Use case: Delete a person")])])}
+with(this){return _c('p',[_c('strong',[_v("Use Case: Add a candidate")])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("MSS")])])}
 },function anonymous(
 ) {
-with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests to list persons")])]),_v(" "),_c('li',[_c('p',[_v("AddressBook shows a list of persons")])]),_v(" "),_c('li',[_c('p',[_v("User requests to delete a specific person in the list")])]),_v(" "),_c('li',[_c('p',[_v("AddressBook deletes the person")]),_v(" "),_c('p',[_v("Use case ends.")])])])}
+with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests to add a candidate with name, phone number, email, address, and optional tags.")])]),_v(" "),_c('li',[_c('p',[_v("System verifies that the input values are valid.")])]),_v(" "),_c('li',[_c('p',[_v("System adds the candidate.")])]),_v(" "),_c('li',[_c('p',[_v("System displays confirmation message.")])]),_v(" "),_c('li',[_c('p',[_v("GUI updates to show the new candidate.")]),_v(" "),_c('p',[_v("Use case ends.")])])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_c('p',[_v("2a. The list is empty.")]),_v(" "),_c('p',[_v("Use case ends.")])]),_v(" "),_c('li',[_c('p',[_v("3a. The given index is invalid.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("3a1. AddressBook shows an error message.")]),_v(" "),_c('p',[_v("Use case resumes at step 2.")])])])])])}
+with(this){return _c('ul',[_c('li',[_c('p',[_v("2a. Name is invalid.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("2a1. System displays an error: “Error: {candidate name} is not a valid name.”")]),_v(" "),_c('p',[_v("Use case ends.")])])])]),_v(" "),_c('li',[_c('p',[_v("2b. Email is invalid.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("2b1. System displays an error: “Error: {candidate email} is not a valid email.”")]),_v(" "),_c('p',[_v("Use case ends.")])])])]),_v(" "),_c('li',[_c('p',[_v("2c. Required parameters are missing.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("2c1. System displays an error: “Error: The command format is add n/{candidate name} p/{phone number} e/{email} a/{address} [t/{tag}].”")]),_v(" "),_c('p',[_v("Use case ends.")])])])])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('em',[_v("{More to be added}")])])}
@@ -281,6 +281,6 @@ with(this){return _c('h3',{attrs:{"id":"saving-data"}},[_v("Saving data"),_c('a'
 with(this){return _c('ol',[_c('li',[_c('p',[_v("Dealing with missing/corrupted data files")]),_v(" "),_c('ol',[_c('li',[_c('em',[_v("{explain how to simulate a missing/corrupted file, and the expected behavior}")])])])]),_v(" "),_c('li',[_c('p',[_c('em',[_v("{ more test cases …​ }")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(", generated on Fri, 7 Mar 2025, 20:36:27 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(", generated on Fri, 7 Mar 2025, 20:36:48 GMT+8]")])])])}
 }];
   
