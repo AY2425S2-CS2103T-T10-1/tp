@@ -9,8 +9,8 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  */
 public class Tag {
 
-    public static final String MESSAGE_CONSTRAINTS = "Tags names should be alphanumeric";
-    public static final String VALIDATION_REGEX = "\\p{Alnum}+";
+    public static final String MESSAGE_CONSTRAINTS = "Tag names should not contain / or \\";
+    public static final String VALIDATION_REGEX = "[^\\\\/]+";
 
     public final String tagName;
 
@@ -39,12 +39,11 @@ public class Tag {
         }
 
         // instanceof handles nulls
-        if (!(other instanceof Tag)) {
-            return false;
+        if (other instanceof Tag otherTag) {
+            return tagName.equals(otherTag.tagName);
         }
 
-        Tag otherTag = (Tag) other;
-        return tagName.equals(otherTag.tagName);
+        return false;
     }
 
     @Override
