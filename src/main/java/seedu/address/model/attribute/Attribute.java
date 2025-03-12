@@ -54,6 +54,7 @@ public class Attribute {
 
     /**
      * Checks if attribute name matches a given string, case insensitively.
+     *
      * @param name Attribute name to check against
      * @return True if it matches, false otherwise
      */

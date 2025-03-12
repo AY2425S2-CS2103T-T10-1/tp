@@ -85,6 +85,7 @@ public class Person {
 
     /**
      * Removes specified {@code Attribute} object from list of attributes in Peron's list.
+     *
      * @param attribute Attribute object to be added
      * @return If the removal was successful
      */

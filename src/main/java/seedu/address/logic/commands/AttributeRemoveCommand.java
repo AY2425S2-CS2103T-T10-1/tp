@@ -29,6 +29,8 @@ public class AttributeRemoveCommand extends Command {
     private final List<String> attributeNames;
 
     /**
+     * Constructs a {@code AttributeRemoveCommand}
+     *
      * @param index name of the person to be edited
      * @param attributeNames List of names of the attributes to be deleted
      */
