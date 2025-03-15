@@ -170,7 +170,7 @@ Examples:
 
 Removes one or more attributes from the specified person in the address book.
 
-Format: `remove-attribute INDEX [a/ATTRIBUTE_NAME]`
+Format: `remove-attribute INDEX [a/ATTRIBUTE_NAME]…​`
 
 * Removes attributes from the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **must be a positive integer** 1, 2, 3, …​
 * Command is only executed are only deleted if the person has all specified attributes.
@@ -231,5 +231,5 @@ Action     | Format, Examples
 **Edit**   | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
 **Find**   | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`
 **List**   | `list`
-**Remove Attribute** | `remove-attribute INDEX [a/ATTRIBUTE_NAME]`
+**Remove Attribute** | `remove-attribute INDEX [a/ATTRIBUTE_NAME]…​`
 **Help**   | `help`
