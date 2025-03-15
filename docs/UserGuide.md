@@ -166,6 +166,20 @@ Format: `attribute n/NAME a/ATTRIBUTE_NAME v/ATTRIBUTE_VALUE`
 Examples:
 * `attribute n/Alex a/Highest Educational Qualification v/Bachelors` adds the "Highest Educational Qualification" attribute to the person "Alex" with a value of "Bachelors".
 
+### Removing an attribute from an existing entry: `remove-attribute`
+
+Removes one or more attributes from the specified person in the address book.
+
+Format: `remove-attribute INDEX [a/ATTRIBUTE_NAME]`
+
+* Removes attributes from the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list. The index **must be a positive integer** 1, 2, 3, …​
+* Command is only executed are only deleted if the person has all specified attributes.
+* `ATTRIBUTE_NAME` is matched case-insensitively. For instance, a command `remove-attribute 2 a/graduation year` can delete an attribute with name `Graduation Year`
+
+Examples:
+* `remove-attribute 2 a/major` removes the attribute "Major" from the person at index 2, as long as they currently have that attribute specified.
+* `remove-attribute 3 a/major a/graduation year` removes both attributes "Major" and "Graduation Year" from the person at index 3, as long as they currently have both attributes specified.
+
 ### Exiting the program : `exit`
 
 Exits the program.
@@ -217,4 +231,5 @@ Action     | Format, Examples
 **Edit**   | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
 **Find**   | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`
 **List**   | `list`
+**Remove Attribute** | `remove-attribute INDEX [a/ATTRIBUTE_NAME]`
 **Help**   | `help`
