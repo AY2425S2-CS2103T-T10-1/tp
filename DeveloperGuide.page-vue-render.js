@@ -245,7 +245,7 @@ with(this){return _c('ol',[_c('li',[_c('p',[_v("User requests to add a candidate
 with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_c('p',[_v("2a. Name is invalid.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("2a1. System displays an error: “Error: {candidate name} is not a valid name.”")]),_v(" "),_c('p',[_v("Use case ends.")])])])]),_v(" "),_c('li',[_c('p',[_v("2b. Email is invalid.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("2b1. System displays an error: “Error: {candidate email} is not a valid email.”")]),_v(" "),_c('p',[_v("Use case ends.")])])])]),_v(" "),_c('li',[_c('p',[_v("2c. Required parameters are missing.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("2c1. System displays an error: “Error: The command format is add n/{candidate name} p/{phone number} e/{email} a/{address} [t/{tag}].”")]),_v(" "),_c('p',[_v("Use case ends.")])])])])])}
+with(this){return _c('ul',[_c('li',[_c('p',[_v("2a. Name is invalid.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("2a1. System displays an error: “Error: {candidate name} is not a valid name.”")]),_v(" "),_c('p',[_v("Use case ends.")])])])]),_v(" "),_c('li',[_c('p',[_v("2b. Email is invalid.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("2b1. System displays an error: “Error: {candidate email} is not a valid email.”")]),_v(" "),_c('p',[_v("Use case ends.")])])])]),_v(" "),_c('li',[_c('p',[_v("2c. Required parameters are missing.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("2c1. System displays an error: “Error: The command format is add n/{candidate name} p/{phone number} e/{email} [t/{tag}].”")]),_v(" "),_c('p',[_v("Use case ends.")])])])])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('em',[_v("{More to be added}")])])}
@@ -284,6 +284,6 @@ with(this){return _c('h3',{attrs:{"id":"saving-data"}},[_v("Saving data"),_c('a'
 with(this){return _c('ol',[_c('li',[_c('p',[_v("Dealing with missing/corrupted data files")]),_v(" "),_c('ol',[_c('li',[_c('em',[_v("{explain how to simulate a missing/corrupted file, and the expected behavior}")])])])]),_v(" "),_c('li',[_c('p',[_c('em',[_v("{ more test cases …​ }")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.6.0")]),_v(", generated on Sat, 15 Mar 2025, 16:36:23 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.6.0")]),_v(", generated on Sun, 16 Mar 2025, 22:19:11 GMT+8]")])])])}
 }];
   
