@@ -75,8 +75,14 @@ class JsonAdaptedPerson {
         }
 
         final List<Attribute> personAttributes = new ArrayList<>();
+        final Set<String> attributeNames = new HashSet<>();
         for (JsonAdaptedAttribute attribute : attributes) {
             personAttributes.add(attribute.toModelType());
+            attributeNames.add(attribute.getAttributeName().toLowerCase());
+        }
+
+        if (attributeNames.size() != personAttributes.size()) {
+            throw new IllegalValueException(Attribute.NO_DUPLICATES);
         }
 
         if (name == null) {
