@@ -80,16 +80,16 @@ Format: `help`
 
 Adds a person to the database.
 
-Format: `add n/NAME p/PHONE_NUMBER e/EMAIL [t/TAG]…​`
+Format: `add n/NAME p/PHONE_NUMBER e/EMAIL [t/TAG]…​ [a/ATTRIBUTE=VALUE]…​`
 
 <box type="tip" seamless>
 
-**Tip:** A person can have any number of tags (including 0)
+**Tip:** A person can have any number of tags, and any number of attributes (including 0)
 </box>
 
 Examples:
 * `add n/John Doe p/98765432 e/johnd@example.com`
-* `add n/Betsy Crowe t/C++ e/betsycrowe@example.com p/1234567 t/Java`
+* `add n/Betsy Crowe t/C++ e/betsycrowe@example.com p/1234567 t/Java a/Major=Data Science`
 
 ### Listing all persons : `list`
 
@@ -225,7 +225,7 @@ _Details coming soon ..._
 
 Action     | Format, Examples
 -----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**Add**    | `add n/NAME p/PHONE_NUMBER e/EMAIL [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com t/C++ t/Java`
+**Add**    | `add n/NAME p/PHONE_NUMBER e/EMAIL [t/TAG]… [a/ATTRIBUTE=VALUE]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com t/C++ t/Java a/Major=Data Science`
 **Clear**  | `clear`
 **Delete** | `delete INDEX`<br> e.g., `delete 3`
 **Edit**   | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
