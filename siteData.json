@@ -119,6 +119,7 @@
         "clearing-all-entries-clear": "Clearing all entries : clear",
         "adding-a-new-attribute-to-existing-entry-attribute": "Adding a new attribute to existing entry: attribute",
         "removing-an-attribute-from-an-existing-entry-remove-attribute": "Removing an attribute from an existing entry: remove-attribute",
+        "filtering-candidates-by-attributes-filter": "Filtering candidates by attributes: filter",
         "sort-entries-by-an-attribute-sort": "Sort entries by an attribute: sort",
         "exiting-the-program-exit": "Exiting the program : exit",
         "saving-the-data": "Saving the data",
