@@ -121,6 +121,7 @@
         "clearing-all-entries-clear": "Clearing all entries: clear",
         "filtering-candidates-by-attributes-filter": "Filtering candidates by attributes: filter",
         "sorting-entries-by-an-attribute-sort": "Sorting entries by an attribute: sort",
+        "sorting-entries-by-the-numerical-value-of-an-attribute-sort-num": "Sorting entries by the numerical value of an attribute: sort-num",
         "undoing-the-last-data-change-undo": "Undoing the last data change: undo",
         "navigating-past-commands": "Navigating past commands: ↑ ↓",
         "exiting-the-program-exit": "Exiting the program: exit",
