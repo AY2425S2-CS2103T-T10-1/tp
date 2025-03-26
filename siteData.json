@@ -120,6 +120,7 @@
         "filtering-candidates-by-attributes-filter": "Filtering candidates by attributes: filter",
         "sorting-entries-by-an-attribute-sort": "Sorting entries by an attribute: sort",
         "undo-the-last-data-change-undo": "Undo the last data change: undo",
+        "navigating-past-executed-commands-up-arrow-down-arrow": "Navigating past executed commands: UP_ARROW/DOWN_ARROW",
         "exiting-the-program-exit": "Exiting the program: exit",
         "saving-the-data": "Saving the data",
         "editing-the-data-file": "Editing the data file",
