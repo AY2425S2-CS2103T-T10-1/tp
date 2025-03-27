@@ -77,7 +77,7 @@ CommandResult --> FilterCommand
 deactivate CommandResult
 
 FilterCommand --> LogicManager : r
-deactivate DeleteCommand
+deactivate FilterCommand
 
 [<--LogicManager
 deactivate LogicManager
