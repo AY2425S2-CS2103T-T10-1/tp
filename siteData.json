@@ -53,7 +53,7 @@
         "implementation": "Implementation",
         "new-feature-filtering": "[New feature] Filtering",
         "proposed-undo-redo-feature": "[Proposed] Undo/redo feature",
-        "proposed-sort-numerical-sort-feature": "[Proposed] sort/numerical sort feature",
+        "new-feature-sort-numerical-sort-feature": "[New feature] Sort/numerical sort feature",
         "proposed-data-archiving": "[Proposed] Data archiving",
         "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
         "appendix-requirements": "Appendix: Requirements",

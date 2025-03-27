@@ -1,15 +1,13 @@
 @startuml
 !include style.puml
 skinparam ArrowFontStyle plain
+skinparam sequenceReferenceBackgroundColor white
 
 box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
 participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
 participant ":LexSortCommandParser" as LexSortCommandParser LOGIC_COLOR
 participant "d:LexSortCommand" as LexSortCommand LOGIC_COLOR
-participant "r:CommandResult" as CommandResult LOGIC_COLOR
-participant "c:AttributeBasedPersonComparator" as AttributeBasedPersonComparator LOGIC_COLOR
-participant "v:ValueBasedAttributeComparator" as ValueBasedAttributeComparator LOGIC_COLOR
 end box
 
 box Model MODEL_COLOR_T1
@@ -51,32 +49,7 @@ deactivate AddressBookParser
 LogicManager -> LexSortCommand : execute(m)
 activate LexSortCommand
 
-create ValueBasedAttributeComparator
-LexSortCommand -> ValueBasedAttributeComparator
-activate ValueBasedAttributeComparator
-
-ValueBasedAttributeComparator --> LexSortCommand : v
-deactivate ValueBasedAttributeComparator
-
-create AttributeBasedPersonComparator
-LexSortCommand -> AttributeBasedPersonComparator: AttributeBasedPersonComparator("Location", v)
-activate AttributeBasedPersonComparator
-
-AttributeBasedPersonComparator --> LexSortCommand: c
-deactivate AttributeBasedPersonComparator
-
-LexSortCommand -> Model : sortFilteredPersonList(c)
-activate Model
-
-Model --> LexSortCommand
-deactivate Model
-
-create CommandResult
-LexSortCommand -> CommandResult
-activate CommandResult
-
-CommandResult --> LexSortCommand
-deactivate CommandResult
+ref#white over LexSortCommand, Model : sort lexicographically
 
 LexSortCommand --> LogicManager : r
 deactivate LexSortCommand
