@@ -1,0 +1,28 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Model MODEL_COLOR_T1
+participant ":Model" as MM MODEL_COLOR
+participant "previousStates: Stack<Pair<AddressBook, String>>" as Stack MODEL_COLOR
+end box
+
+[-> MM : saveState(commandText)
+activate MM
+
+MM -> Stack: isEmpty()
+alt Stack is not empty
+    MM -> Stack: peek()
+    activate Stack
+    Stack --> MM: previousState
+    deactivate Stack
+    alt previousState address book is equal to addressBook
+         MM -> Stack: pop()
+    end alt
+end alt
+MM -> Stack: push pair of current address book and commandText
+
+[<--MM
+deactivate MM
+
+@enduml
