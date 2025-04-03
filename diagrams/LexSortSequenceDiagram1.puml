@@ -4,56 +4,55 @@ skinparam ArrowFontStyle plain
 skinparam sequenceReferenceBackgroundColor white
 
 box Logic LOGIC_COLOR_T1
-participant ":LogicManager" as LogicManager LOGIC_COLOR
-participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
-participant ":LexSortCommandParser" as LexSortCommandParser LOGIC_COLOR
 participant "d:LexSortCommand" as LexSortCommand LOGIC_COLOR
+participant "r:CommandResult" as CommandResult LOGIC_COLOR
 end box
 
 box Model MODEL_COLOR_T1
 participant "m:Model" as Model MODEL_COLOR
+participant "<<class>>\nAutoCorrectionUtil" as Util MODEL_COLOR
 end box
 
-[-> LogicManager : execute("sort a/Location")
-activate LogicManager
-
-LogicManager -> AddressBookParser : parseCommand("sort a/Location")
-activate AddressBookParser
-
-create LexSortCommandParser
-AddressBookParser -> LexSortCommandParser
-activate LexSortCommandParser
-
-LexSortCommandParser --> AddressBookParser
-deactivate LexSortCommandParser
-
-AddressBookParser -> LexSortCommandParser : parse("a/Location")
-activate LexSortCommandParser
-
-create LexSortCommand
-LexSortCommandParser -> LexSortCommand
+[-> LexSortCommand : execute(m)
 activate LexSortCommand
 
-LexSortCommand --> LexSortCommandParser :
+LexSortCommand -> Model : autocorrectAttributeName("Locaton")
+activate Model
+
+LexSortCommand <-- Model : ["location"]
+deactivate Model
+
+ref#white over LexSortCommand, Model : Get the comparator for alphabetical sort
+
+LexSortCommand -> Model : sortFilteredPersonList(c)
+activate Model
+
+Model --> LexSortCommand
+deactivate Model
+
+LexSortCommand -> LexSortCommand ++ : getWarningMessages(m)
+
+LexSortCommand -> Util : getWarningForName("locaton", ["location"])
+activate Util
+
+Util --> LexSortCommand
+deactivate Util
+
+LexSortCommand -> Model : numOfPersonsWithAttribute("location")
+activate Model
+
+Model --> LexSortCommand
+deactivate Model
+
+return message
+
+create CommandResult
+LexSortCommand -> CommandResult : CommandResult(message)
+activate CommandResult
+
+CommandResult --> LexSortCommand
+deactivate CommandResult
+
+[<--LexSortCommand : r
 deactivate LexSortCommand
-
-LexSortCommandParser --> AddressBookParser : d
-deactivate LexSortCommandParser
-'Hidden arrow to position the destroy marker below the end of the activation bar.
-LexSortCommandParser -[hidden]-> AddressBookParser
-destroy LexSortCommandParser
-
-AddressBookParser --> LogicManager : d
-deactivate AddressBookParser
-
-LogicManager -> LexSortCommand : execute(m)
-activate LexSortCommand
-
-ref#white over LexSortCommand, Model : sort lexicographically
-
-LexSortCommand --> LogicManager : r
-deactivate LexSortCommand
-
-[<--LogicManager
-deactivate LogicManager
 @enduml
