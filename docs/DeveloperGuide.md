@@ -160,7 +160,7 @@ Classes used by multiple components are in the `seedu.address.commons` package.
 
 This section describes some noteworthy details on how certain features are implemented.
 
-### Filtering
+### Filtering feature
 
 The following describes how the filter command `filter a/Mayor=CS` is executed.
 
@@ -287,7 +287,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* *`    | meticulous user                                                                         | edit a candidate's information                                                                                | I can keep my address book up to date                            |
 | `* *`    | user required to share the information on candidates with others                        | select candidates and print out their information, in an organized way                                        | I can present the candidates to others                           |
 | `* *`    | user interviewing the candidates                                                        | relate the date of interview to the candidates                                                                | I can organize my schedule easily                                |
-| `* *`    | user managing candidates across different positions                                     | tag candidates                                                                                                | I can easily categorize them                                     |
+| `* *`    | user managing candidates across different positions                                     | tag candidates                                                                                                | I can easily categorize them
+| `* *`    | user needing to look into each candidate                                     | display a panel showing their complete information                                                                   | I can view their details at a glance
+| `* *`    | user managing socials of candidates                                     | open the website link to their profile | I can easily access and review them                                        |
 | `* *`    | forgetful user                                                                          | see my most recent commands                                                                                   | I can be reminded of what changes I just made                    |
 | `* *`    | careless user                                                                           | get back my most recent command                                                                               | I don't have to retype my previous command should there be typos |
 | `* *`    | careless user                                                                           | undo my most recent command                                                                                   | accidental changes I make can be reverted easily                 |
@@ -300,6 +302,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `*`      | careless user                                                                           | have my command autocorrected                                                                                 | I don't need to fix my typos                                     |
 | `*`      | busy user                                                                               | have my command predicted and auto-filled                                                                     | I can save time typing commands in full                          |
 | `*`      | event organizer                                                                         | quickly find people who live near to a certain location                                                       | I can choose suitable candidates to invite to an event           |
+| `*`    | user managing numeric properties of candidates (e.g., `GPA`)                                     | sort their properties in numeric order                                                                   |
+| `*`    | user managing various properties of candidates                                | sort them in both ascending and descending order                                                                   | I can rank the candidates easier
 
 ### Use cases
 
@@ -424,12 +428,13 @@ Precondition: User must be viewing previous commands.
 ### Non-Functional Requirements
 
 1. Should work on any _mainstream OS_ as long as it has Java `17` or above installed.
-2. Should be able to hold up to 1000 persons without any noticeable sluggishness in performance for typical usage.
-3. A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster by using commands as compared to using the mouse.
-4. Logs must be automatically generated.
-5. Logs must be identical across different operating systems to enable sharing between the same app on different OS platforms.
-6. Copy and paste should be supported in text fields, allowing the user to enter information without typing manually.
-7. The app has to respond within one second.
+1. Should be able to hold up to 1000 persons without any noticeable sluggishness in performance for typical usage.
+1. A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster by using commands as compared to using the mouse.
+1. Logs must be automatically generated.
+1. Logs must be identical across different operating systems to enable sharing between the same app on different OS platforms.
+1. Copy and paste should be supported in text fields, allowing the user to enter information without typing manually.
+1. The app has to respond within one second.
+1. The app must remain functional even if the user manually modifies the JSON file and should not crash, even with incorrect modifications.
 
 ### Glossary
 
