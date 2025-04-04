@@ -39,7 +39,7 @@ public class NumSortCommand extends SortCommand {
 
     @Override
     public AttributeBasedPersonComparator getComparator(boolean isAscending) {
-        return new AttributeBasedPersonComparator(this.attributeName,
+        return new AttributeBasedPersonComparator(this.adjustedAttributeName.orElse(this.attributeName),
                 new NumericalValueBasedAttributeComparator(isAscending));
     }
 
