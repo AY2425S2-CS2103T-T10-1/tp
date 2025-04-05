@@ -56,7 +56,7 @@ public class PersonCard extends UiPart<Region> {
 
         setLabelIcon(phone, "/images/telephone-receiver.png");
         phone.setText(person.getPhone().value);
-        setLabelIcon(phone, "/images/email.png");
+        setLabelIcon(email, "/images/email.png");
         email.setText(person.getEmail().value);
 
         person.getTags().stream()
