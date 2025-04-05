@@ -11,34 +11,34 @@ TalentFolio is a powerful yet easy-to-use application designed for hiring manage
 <!-- * Table of Contents -->
 ## Table of Contents
 
-- [Quick start](#quick-start)
-  - [Install Java (if not already installed)](#1-install-java-if-not-already-installed)
-  - [Download TalentFolio](#2-download-talentfolio)
-  - [Set up TalentFolio](#3-set-up-talentfolio)
-  - [Running TalentFolio](#4-running-talentfolio)
-  - [Using TalentFolio](#5-using-talentfolio)
-  - [Need more help?](#6-need-more-help)
-- [Features](#features)
-  - [Viewing help: `help`](#viewing-help-help)
-  - [Showing a person's details: `show`](#showing-a-person-s-details-show)
-  - [Adding a person: `add`](#adding-a-person-add)
-  - [Listing all persons: `list`](#listing-all-persons-list)
-  - [Editing a person: `edit`](#editing-a-person-edit)
-  - [Linking an attribute name to a site URL: `link`](#linking-an-attribute-name-to-a-website-link)
-  - [Locating persons by name: `find`](#locating-persons-by-name-find)
-  - [Deleting a person: `delete`](#deleting-a-person-delete)
-  - [Clearing all entries: `clear`](#clearing-all-entries-clear)
-  - [Filtering candidates by attributes: `filter`](#filtering-candidates-by-attributes-filter)
-  - [Sorting entries by an attribute: `sort`](#sorting-entries-by-an-attribute-sort)
-  - [Sorting entries by the numerical value of an attribute: `sort-num`](#sorting-entries-by-the-numerical-value-of-an-attribute-sort-num)
-  - [Undoing the last data change: `undo`](#undoing-the-last-data-change-undo)
-  - [Navigating past commands: <kbd>↑</kbd> <kbd>↓</kbd>](#navigating-past-commands)
-  - [Exiting the program: `exit`](#exiting-the-program-exit)
-  - [Saving the data](#saving-the-data)
-  - [Editing the data file](#editing-the-data-file)
-- [FAQ](#faq)
-- [Known issues](#known-issues)
-- [Command summary](#command-summary)
+1. [Quick start](#quick-start)  
+  a. [Install Java (if not already installed)](#1-install-java-if-not-already-installed)  
+  b. [Download TalentFolio](#2-download-talentfolio)  
+  c. [Set up TalentFolio](#3-set-up-talentfolio)  
+  d. [Running TalentFolio](#4-running-talentfolio)  
+  e. [Using TalentFolio](#5-using-talentfolio)  
+  f. [Need more help?](#6-need-more-help)  
+1. [Features](#features)  
+  a. [Viewing help: `help`](#viewing-help-help)  
+  b. [Showing a person's details: `show`](#showing-a-person-s-details-show)  
+  c. [Adding a person: `add`](#adding-a-person-add)  
+  d. [Listing all persons: `list`](#listing-all-persons-list)  
+  e. [Editing a person: `edit`](#editing-a-person-edit)  
+  f. [Linking an attribute name to a website: `link`](#linking-an-attribute-name-to-a-website-link)  
+  g. [Locating persons by name: `find`](#locating-persons-by-name-find)  
+  h. [Deleting a person: `delete`](#deleting-a-person-delete)  
+  i. [Clearing all entries: `clear`](#clearing-all-entries-clear)  
+  j. [Filtering candidates by attributes: `filter`](#filtering-candidates-by-attributes-filter)  
+  l. [Sorting entries by an attribute: `sort`](#sorting-entries-by-an-attribute-sort)  
+  m. [Sorting entries by the numerical value of an attribute: `sort-num`](#sorting-entries-by-the-numerical-value-of-an-attribute-sort-num)  
+  n. [Undoing the last data change: `undo`](#undoing-the-last-data-change-undo)  
+  o. [Navigating past commands: <kbd>↑</kbd> <kbd>↓</kbd>](#navigating-past-commands)  
+  p. [Exiting the program: `exit`](#exiting-the-program-exit)  
+  q. [Saving the data](#saving-the-data)  
+  r. [Editing the data file](#editing-the-data-file)
+1. [FAQ](#faq)
+1. [Known issues](#known-issues)
+1. [Command summary](#command-summary)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -174,7 +174,8 @@ Examples:
 
 **More information on attributes:**
 * Attribute names are unique. A person cannot have multiple attributes with the same name.
-* Attribute names are case-aware, but case-insensitive. For example, `Major` is treated the same as `major`. The case you specify is the case that will be shown.
+* Attribute names are case-insensitive. For example, `Major` is treated the same as `major`, so a person cannot have both `Major` and `major` as an attribute.
+  * The original casing of your input is preserved. If you input `Major`, that's how it will be stored and displayed.
 * Attribute values are case-sensitive.
 </box>
 

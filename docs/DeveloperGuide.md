@@ -7,7 +7,31 @@ pageNav: 3
 # TalentFolio Developer Guide
 
 <!-- * Table of Contents -->
-<page-nav-print />
+## Table of Contents
+
+1. [Setting up, getting started](#setting-up-getting-started)
+1. [Design](#design)  
+   a. [Architecture](#architecture)  
+   b. [UI component](#ui-component)  
+   c. [Logic component](#logic-component)  
+   d. [Model component](#model-component)  
+   e. [Storage component](#storage-component)  
+   f. [Common classes](#common-classes)
+1. [Implementation](#implementation)  
+   a. [Filter feature](#filter-feature)  
+   b. [Undo feature](#undo-feature)  
+   c. [Sort/numerical sort feature](#sort-numerical-sort-feature)
+1. [Documentation, logging, testing, configuration, dev-ops](#documentation-logging-testing-configuration-dev-ops)
+1. [Appendix: Requirements](#appendix-requirements)  
+   a. [Product scope](#product-scope)  
+   b. [User stories](#user-stories)  
+   c. [Use cases](#use-cases)  
+   d. [Non-Functional Requirements](#non-functional-requirements)  
+   e. [Glossary](#glossary)
+1. [Appendix: Instructions for manual testing](#appendix-instructions-for-manual-testing)  
+   a. [Launch and shutdown](#launch-and-shutdown)  
+   b. [Deleting a person](#deleting-a-person)  
+   c. [Saving data](#saving-data)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -160,7 +184,7 @@ Classes used by multiple components are in the `seedu.address.commons` package.
 
 This section describes some noteworthy details on how certain features are implemented.
 
-### Filtering
+### Filter feature
 
 The following describes how the filter command `filter a/Mayor=CS` is executed.
 
