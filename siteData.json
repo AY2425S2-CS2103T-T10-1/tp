@@ -41,6 +41,7 @@
       "title": "Developer Guide",
       "headings": {
         "talentfolio-developer-guide": "TalentFolio Developer Guide",
+        "table-of-contents": "Table of Contents",
         "acknowledgements": "Acknowledgements",
         "setting-up-getting-started": "Setting up, getting started",
         "design": "Design",
@@ -51,7 +52,7 @@
         "storage-component": "Storage component",
         "common-classes": "Common classes",
         "implementation": "Implementation",
-        "filtering-feature": "Filtering feature",
+        "filter-feature": "Filter feature",
         "undo-feature": "Undo feature",
         "sort-numerical-sort-feature": "Sort/numerical sort feature",
         "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
