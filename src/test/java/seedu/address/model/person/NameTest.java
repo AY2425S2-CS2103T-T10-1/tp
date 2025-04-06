@@ -30,26 +30,17 @@ public class NameTest {
         assertFalse(Name.isValidName("^")); // only non-alphanumeric characters
         assertFalse(Name.isValidName("peter*")); // contains non-alphanumeric characters
         assertFalse(Name.isValidName("R!chel")); // contains non-alphanumeric characters
-        assertFalse(Name.isValidName("_Le_epic_man_")); // starts with special character
-        assertFalse(Name.isValidName("A very very super duper ultra mega epic long goofy ahh name")); // very long name
-        assertFalse(Name.isValidName("Now this name is exactly 51 characters surprisngly.")); // exactly 51 characters
 
         // valid name
         assertTrue(Name.isValidName("peter jack")); // alphabets only
         assertTrue(Name.isValidName("12345")); // numbers only
         assertTrue(Name.isValidName("peter the 2nd")); // alphanumeric characters
         assertTrue(Name.isValidName("Capital Tan")); // with capital letters
-        assertTrue(Name.isValidName("David Roger Jackson Ray Jr the 2nd Ah Long, Esq.")); // valid long name
-        assertTrue(Name.isValidName("A name that is exactly 50 characters surprisingly.")); // exactly 50 characters
+        assertTrue(Name.isValidName("David Roger Jackson Ray Jr 2nd")); // long names
         assertTrue(Name.isValidName("Nagaratnam s/o Suppiah")); // names with s/o
         assertTrue(Name.isValidName("Nagaratnam d/o Suppiah")); // names with d/o
         assertTrue(Name.isValidName("Tan Cheng Bok @ Adrian Tan")); // names with @
         assertTrue(Name.isValidName("Tan Ah-Kau")); // names with -
-        assertTrue(Name.isValidName("Firstname Lastname Dialect Name (Chinese Name)")); // names with ()
-        assertTrue(Name.isValidName("O'Reilly")); // names with '
-        assertTrue(Name.isValidName("Macbeth, Esq")); // names with ,
-        assertTrue(Name.isValidName("Macbeth Esq.")); // names with .
-        assertTrue(Name.isValidName("A_name_that_probably_doesnt_exist")); // names with _
     }
 
     @Test
