@@ -60,6 +60,26 @@ public class Person {
     }
 
     /**
+     * Adds a tag.
+     *
+     * @param tag Tag to be updated or added
+     */
+
+    public void updateTag(Tag tag) {
+        tags.add(tag);
+    }
+
+    /**
+     * Removes specified {@code Tag} object from list of tags in Person's list.
+     *
+     * @param tag Tag object to be removed
+     * @return If the removal was successful
+     */
+    public boolean removeTag(Tag tag) {
+        return tags.remove(tag);
+    }
+
+    /**
      * Returns an immutable attribute set, which throws {@code UnsupportedOperationException}
      * if modification is attempted.
      */
