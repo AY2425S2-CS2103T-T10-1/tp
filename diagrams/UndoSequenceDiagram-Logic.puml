@@ -22,13 +22,13 @@ loop while there are previous states and the last state is equal to the current 
 end loop
     alt model has no previous states
         break
-        Model -> UC: throw IllegalStateException
+        Model --> UC: throw IllegalStateException
         [<--UC: failure message
         end break
     end alt
     Model -> Stack: pop()
     activate Stack
-        return last state
+        return last state, associated command
     deactivate Stack
     Model -> AB: resetData(last state)
     Model --> UC: associated command text of last change

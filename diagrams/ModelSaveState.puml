@@ -16,11 +16,14 @@ alt Stack is not empty
     activate Stack
     Stack --> MM: previousState
     deactivate Stack
-    alt previousState address book is equal to addressBook
+    alt previousState is equal to current state
          MM -> Stack: pop()
+         activate Stack
+         Stack --> MM
+         deactivate Stack
     end alt
 end alt
-MM -> Stack: push pair of current address book and commandText
+MM -> Stack: push pair (current state, commandText)
 
 [<--MM
 deactivate MM
