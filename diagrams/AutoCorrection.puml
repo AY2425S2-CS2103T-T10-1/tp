@@ -31,10 +31,10 @@ activate Person
 Util <-- Person
 deactivate Person
 
-Book <-- Util : ["major"]
+Book <-- Util : ["Major"]
 deactivate Util
 
-Model <-- Book : ["major"]
+Model <-- Book : ["Major"]
 deactivate Book
 
 deactivate Model
