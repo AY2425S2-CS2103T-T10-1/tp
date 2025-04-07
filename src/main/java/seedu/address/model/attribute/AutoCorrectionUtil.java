@@ -122,7 +122,7 @@ public class AutoCorrectionUtil {
      */
     public static Optional<String> getWarningForValue(String originalValue, Optional<String> correctedValue) {
         if (correctedValue.isPresent()) {
-            if (originalValue.toLowerCase().equals(correctedValue.get().toLowerCase())) {
+            if (originalValue.equals(correctedValue.get())) {
                 return Optional.empty();
             } else {
                 return Optional.of(
