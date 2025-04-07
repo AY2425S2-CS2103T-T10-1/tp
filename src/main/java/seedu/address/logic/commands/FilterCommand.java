@@ -41,14 +41,13 @@ public class FilterCommand extends Command {
         this.wasDuplicate = wasDuplicate;
     }
 
+    // Design has changed: we will autocorrect the attribute name, but no longer the attribute value.
     private void applyFilter(Model model) {
         Set<Attribute> adjustedAttribtues =
             attributes.stream()
                 .map(attribute -> new Attribute(
                     model.autocorrectAttributeName(attribute.getAttributeName())
-                        .orElse(attribute.getAttributeName()),
-                        model.autocorrectAttributeValue(attribute.getAttributeValue())
-                            .orElse(attribute.getAttributeValue())))
+                        .orElse(attribute.getAttributeName()), attribute.getAttributeValue()))
                             .collect(Collectors.toSet());
 
         AttributeMatchesPredicate filter = new AttributeMatchesPredicate(adjustedAttribtues);
@@ -65,10 +64,13 @@ public class FilterCommand extends Command {
             .reduce("", (x, y) -> x + y + "\n");
     }
 
+    // Design has changed: we will autocorrect the attribute name, but no longer the attribute value.
     private String getWarningsForValue(Model model) {
         return attributes.stream()
             .map(attribute -> attribute.getAttributeValue())
-            .map(value -> AutoCorrectionUtil.getWarningForValue(value, model.autocorrectAttributeValue(value)))
+            .map(value -> AutoCorrectionUtil.getWarningForValue(value,
+                // Now the corrected attribute value has to exactly match the original attrbute value.
+                model.autocorrectAttributeValue(value).filter(correctedValue -> correctedValue.equals(value))))
             .filter(warning -> warning.isPresent())
             .map(warning -> warning.get())
             .reduce("", (x, y) -> x + y + "\n");
