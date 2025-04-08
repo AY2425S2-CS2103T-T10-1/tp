@@ -130,8 +130,10 @@ Quick notes on some commands:
 * Parameters can be in any order.<br>
   For example: if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 
-* Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
-  For example: if you type `help 123`, it will be interpreted as `help`.
+* Extraneous parameters immediately after the command word will be ignored.<br>
+  For example: if you type `help 123`, it will be interpreted as `help`.<br>
+  For example: if you type `sort t/Excel a/Major`, it will be interpreted as `sort a/Major`.<br>
+  For example: `sort a/Major t/Excel` will not be accepted, since the extra `t/Excel` is after the actual parameter `a/Major`.
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </box>
