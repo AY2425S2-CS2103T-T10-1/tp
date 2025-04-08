@@ -670,7 +670,8 @@ Here are some tips on website linking. You can manually modify the correspondenc
 | **Add**  | `add n/NAME p/PHONE_NUMBER e/EMAIL [t/TAG]… [a/ATTRIBUTE_NAME=ATTRIBUTE_VALUE]…` <br> Example: `add n/James Ho p/22224444 e/jamesho@example.com t/C++ t/Java a/Major=Data Science and Analytics` |
 | **List** | `list` |
 | **Edit** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [t/TAG]… [rt/TAG]… [a/ATTRIBUTE_NAME=ATTRIBUTE_VALUE]… [ra/ATTRIBUTE_NAME]…` <br> Example: `edit 2 n/James Lee e/jameslee@example.com` |
-| **Link** | `link a/ATTRIBUTE_NAME=SITE_LINK` |
+| **Link (to add a link)** | `link a/ATTRIBUTE_NAME=SITE_LINK` |
+| **Link (to remove a link)** | `link ra/ATTRIBUTE_NAME` |
 | **Find** | `find KEYWORD…`<br> Example: `find James Jake` |
 | **Delete** | `delete INDEX`<br> Example: `delete 3` |
 | **Clear** | `clear` |
