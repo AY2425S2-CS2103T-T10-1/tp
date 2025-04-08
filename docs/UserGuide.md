@@ -316,6 +316,14 @@ Examples:
 Attribute names are case-insensitive. `link a/github=https://github.com/` has the same effect as `link a/GitHub=https://github.com/`.
 </box>
 
+<box type="warning">
+
+If an attribute corresponds to an invalid link, clicking on it may also copy it instead of opening it.
+
+It is recommended to include the prefix—such as `https://` or `http://`—as omitting it may cause the link to be recognized as invalid.
+
+</box>
+
 <box type="tip">
 
 **Tip:** Associations for `github` and `linkedin` (`https://github.com/` and `https://www.linkedin.com/in/`) are added by default!
@@ -649,7 +657,6 @@ Here are some tips on website linking. You can manually modify the correspondenc
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 1. **If you minimize the Help Window** and then run the `help` command (or use the `Help` menu, or the keyboard shortcut `F1`) again, the original Help Window will remain minimized, and no new Help Window will appear. The remedy is to manually restore the minimized Help Window.
 1. **If using Linux or Unix**, clicking on links will not open them. Instead, the link will be copied to the system clipboard, and a window will appear to notify you that the link has been copied. You will have to paste the link into your browser manually.
-1. **If an attribute corresponds to an invalid link**, clicking on it may also copy it instead of opening it.
 1. **If names, phone numbers, emails, tags, or attributes are too long**, the data may not display correctly and may be truncated with "...".
 
 --------------------------------------------------------------------------------------------------------------------
