@@ -657,26 +657,26 @@ Here are some tips on website linking. You can manually modify the correspondenc
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 1. **If you minimize the Help Window** and then run the `help` command (or use the `Help` menu, or the keyboard shortcut `F1`) again, the original Help Window will remain minimized, and no new Help Window will appear. The remedy is to manually restore the minimized Help Window.
 1. **If using Linux or Unix**, clicking on links will not open them. Instead, the link will be copied to the system clipboard, and a window will appear to notify you that the link has been copied. You will have to paste the link into your browser manually.
-1. **If names, phone numbers, emails, tags, or attributes are too long**, the data may not display correctly and may be truncated with "...".
+1. **If names, phone numbers, emails, tags, or attributes are too long**, the data may not display correctly and may be truncated with "...". You can expand the window width to view the complete text.
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## Command summary
 
-Action     | Format, Examples
------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**Help**   | `help`
-**Show**   | `show INDEX` <br> Example: `show 1`
-**Add**    | `add n/NAME p/PHONE_NUMBER e/EMAIL [t/TAG]… [a/ATTRIBUTE_NAME=ATTRIBUTE_VALUE]…` <br> Example: `add n/James Ho p/22224444 e/jamesho@example.com t/C++ t/Java a/Major=Data Science and Analytics`
-**List**   | `list`
-**Edit**   | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [t/TAG]… [a/ATTRIBUTE_NAME=ATTRIBUTE_VALUE]… [ra/ATTRIBUTE_NAME]…` <br> Example: `edit 2 n/James Lee e/jameslee@example.com`
-**Link**   | `link a/ATTRIBUTE_NAME=SITE_LINK`
-**Find**   | `find KEYWORD…`<br> Example: `find James Jake`
-**Delete** | `delete INDEX`<br> Example: `delete 3`
-**Clear**  | `clear`
-**Filter** | `filter a/ATTRIBUTE_NAME=ATTRIBUTE_VALUE…` <br> Example: `filter a/Major=Computer Science`
-**Sort** | `sort a/ATTRIBUTE_NAME [o/ORDER]`<br> Example: `sort a/Degree o/ascending`
-**Numerical Sort** | `sort-num a/ATTRIBUTE_NAME [o/ORDER]`<br> Example: `sort-num a/GPA o/descending`
-**Undo**   | `undo`
-**Navigate Past Commands** | <kbd>↑</kbd> <kbd>↓</kbd>
-**Exit**   | `exit`
+| Action | Format, Examples |
+|----|---------|
+| **Help** | `help` |
+| **Show** | `show INDEX` <br> Example: `show 1` |
+| **Add**  | `add n/NAME p/PHONE_NUMBER e/EMAIL [t/TAG]… [a/ATTRIBUTE_NAME=ATTRIBUTE_VALUE]…` <br> Example: `add n/James Ho p/22224444 e/jamesho@example.com t/C++ t/Java a/Major=Data Science and Analytics` |
+| **List** | `list` |
+| **Edit** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [t/TAG]… [rt/TAG]… [a/ATTRIBUTE_NAME=ATTRIBUTE_VALUE]… [ra/ATTRIBUTE_NAME]…` <br> Example: `edit 2 n/James Lee e/jameslee@example.com` |
+| **Link** | `link a/ATTRIBUTE_NAME=SITE_LINK` |
+| **Find** | `find KEYWORD…`<br> Example: `find James Jake` |
+| **Delete** | `delete INDEX`<br> Example: `delete 3` |
+| **Clear** | `clear` |
+| **Filter** | `filter a/ATTRIBUTE_NAME=ATTRIBUTE_VALUE…` <br> Example: `filter a/Major=Computer Science` |
+| **Sort** | `sort a/ATTRIBUTE_NAME [o/ORDER]`<br> Example: `sort a/Degree o/ascending`  |
+| **Numerical Sort**  | `sort-num a/ATTRIBUTE_NAME [o/ORDER]`<br> Example: `sort-num a/GPA o/descending` |
+| **Undo** | `undo` |
+| **Navigate Past Commands** | <kbd>↑</kbd> <kbd>↓</kbd> |
+| **Exit** | `exit` |

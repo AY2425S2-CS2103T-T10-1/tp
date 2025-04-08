@@ -33,6 +33,11 @@ public class NameTest {
         assertFalse(Name.isValidName("_Le_epic_man_")); // starts with special character
         assertFalse(Name.isValidName("A very very super duper ultra mega epic long goofy ahh name")); // very long name
         assertFalse(Name.isValidName("Now this name is exactly 51 characters surprisngly.")); // exactly 51 characters
+        assertFalse(Name.isValidName("Müller")); // diacritic example 1
+        assertFalse(Name.isValidName("François")); // diacritic example 2
+        assertFalse(Name.isValidName("Катюша")); // cyrillic alphabet
+        assertFalse(Name.isValidName("καλλίστη")); // greek alphabet
+        assertFalse(Name.isValidName("孫正義")); // chinese/japanese/korean alphabet
 
         // valid name
         assertTrue(Name.isValidName("peter jack")); // alphabets only
