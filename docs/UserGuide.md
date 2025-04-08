@@ -194,9 +194,16 @@ Examples:
 * Should only contain alphanumeric characters, spaces, and these special characters: `()/@-',._`.
 * Should not be blank and should not be longer than 50 characters.
 * Should not start with special (non-alphanumeric) characters.
+* If you have a name that cannot be written with the English alphabet, you will need to romanize the name.
+* Here are some examples of romanization:
+* François &rarr; Francois
+* Müller &rarr; Mueller
+* Катюша &rarr; Katyusha
+* καλλίστη &rarr; Callista
+* 孫 正義 &rarr; Son Masayoshi/Son Jeong-ui/Sun Zhengyi
 
 **Phone numbers:**
-* Should only contain numbers (no letters or other special characters).
+* Should only contain numbers (no letters or other special characters such as `+-#*`).
 * Should not be blank and should not be longer than 20 characters.
 
 **Email addresses:**
