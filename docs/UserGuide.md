@@ -194,8 +194,8 @@ Examples:
 * Should only contain alphanumeric characters, spaces, and these special characters: `()/@-',._`.
 * Should not be blank and should not be longer than 50 characters.
 * Should not start with special (non-alphanumeric) characters.
-* If you have a name that cannot be written with the English alphabet, you will need to romanize the name.
-* Here are some examples of romanization:
+
+If you have a name that cannot be written in the English alphabet, you will need to romanize the name. Here are some examples:
 * François &rarr; Francois
 * Müller &rarr; Mueller
 * Катюша &rarr; Katyusha
@@ -208,7 +208,7 @@ Examples:
 
 **Email addresses:**
 
-Should be of the format `LOCAL_PART@DOMAIN` and adhere to the following constraints:
+Should have the format `LOCAL_PART@DOMAIN` and adhere to the following constraints:
 1. `LOCAL_PART` should only contain alphanumeric characters and these special characters: `+_.-`. It should not be blank and should not start or end with any special characters.
 2. `DOMAIN` is a domain name, which is made up of domain labels separated by periods. The domain name must:
    * end with a domain label at least 2 characters long.
@@ -230,7 +230,6 @@ Should be of the format `LOCAL_PART@DOMAIN` and adhere to the following constrai
 * Attribute names are unique. A person cannot have multiple attributes with the same name.
 * Attribute names are case-insensitive. For example, `Major` is treated the same as `major`, so a person cannot have both `Major` and `major` as an attribute.
   * The original casing of your input is preserved. If you input `Major`, that's how it will be stored and displayed.
-* Attribute values are case-sensitive.
 </box>
 
 <br>
@@ -468,12 +467,12 @@ Example:
   * Entries without `Major` as an attribute will be sorted to the end of the list.
 * `sort a/locaton o/desc` sorts entries in descending order according to their `Location` alphabetically.
   * Note that `locaton` can be autocorrect to `Location` with a warning.
+
 <pic src="images/sortResult.png" alt="Sort results">
+
 Results after typing `sort a/locaton o/desc`
 </pic>
-
 <br>
-
 ### Sorting entries by the numerical value of an attribute: `sort-num`
 
 Sorts the current view of entries by the numeric value of the specified attribute name in ascending or descending order.
@@ -493,12 +492,12 @@ Example:
 * `sort-num a/expected salary` sorts entries numerically (in ascending order) according to their `Expected Salary`.
   * Entries without a numerical value for `Expected Salary` will be placed at the end of the list, with those having `Expected Salary` as an attribute but lacking a valid numerical value appearing first.
 * `sort-num a/GPA o/desc` sorts entries numerically (in descending order) according to their `GPA`.
+
 <pic src="images/sortNumResult.png" alt="Sort-num results">
+
 Results after typing `sort-num a/GPA o/desc`
 </pic>
-
 <br>
-
 ### Undoing the last data change: `undo`
 
 Undoes the last data change. Also clears any existing filters applied.
@@ -524,9 +523,9 @@ Examples:
 * `delete 4`, then `filter a/Graduation Year=2026`, then `undo` will skip over the filtering. It will undo `delete 4` and clear the filter
 
 <div align="center">
-  <img src="images/deleteResult.png" width="30%" />
-  <img src="images/filterResult.png" width="30%" />
-  <img src="images/undoResult.png" width="30%" />
+  <img src="images/deleteResult.png" height="340" />
+  <img src="images/filterResult.png" height="340" />
+  <img src="images/undoResult.png" height="340" />
   <p>Results after typing <code>delete 4</code>, then <code>filter a/Graduation Year=2026</code>, then <code>undo</code></p>
 </div>
 
