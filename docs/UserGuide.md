@@ -283,7 +283,7 @@ Examples:
 
 <box type="info">
 
-**Filters:**
+**Filters (including the `find` command):**
 * After editing a person, they may no longer pass the existing filtering criteria. Hence, to ensure the person is still shown in the UI, filters are cleared after a person is edited.
 
 </box>
