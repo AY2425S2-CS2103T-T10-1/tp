@@ -131,9 +131,13 @@ Quick notes on some commands:
   For example: if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 
 * Extraneous parameters immediately after the command word will be ignored.<br>
-  For example: if you type `help 123`, it will be interpreted as `help`.<br>
-  For example: if you type `sort t/Excel a/Major`, it will be interpreted as `sort a/Major`.<br>
-  For example: `sort a/Major t/Excel` will not be accepted, since the extra `t/Excel` is after the actual parameter `a/Major`
+  For example:
+
+  * If you type `help 123`, it will be interpreted as `help`.
+
+  * If you type `sort t/Excel a/Major`, it will be interpreted as `sort a/Major`.
+
+  * `sort a/Major t/Excel` will not be accepted, since the extraneous parameter `t/Excel` is after the actual parameter `a/Major`.
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </box>
@@ -288,8 +292,8 @@ Examples:
 
 <box type="info">
 
-**Filters (including the `find` command):**
-* After editing a person, they may no longer pass the existing filtering criteria. Hence, to ensure the person is still shown in the UI, filters are cleared after a person is edited.
+**Filters:**
+* If a filter is currently active (through the `filter` or `find` command) when a person is edited, that person may no longer pass the existing filtering criteria. Hence, to ensure that the person is still shown in the UI, filters are cleared after a person is edited.
 
 </box>
 
@@ -323,9 +327,9 @@ Attribute names are case-insensitive. `link a/github=https://github.com/` has th
 
 <box type="warning">
 
-If an attribute corresponds to an invalid link (i.e., the app cannot open the site link), clicking on it may also copy it instead of opening it.
+If an attribute corresponds to an invalid link (i.e., the app cannot open the site link), clicking on it may copy it instead of opening it.
 
-It is recommended to include the prefix—such as `https://` or `http://`—as omitting it may cause the link to be recognized as invalid.
+It is recommended to include the prefix — such as `https://` or `http://` — as omitting it may cause the above issue.
 
 </box>
 
@@ -615,7 +619,7 @@ Here are some tips on website linking. You can manually modify the correspondenc
 <p>
 
 **Q**: Can I sort students by multiple different attributes?<br>
-**A**: Unfortunately, TalentFolio currently only allows sorting by one attribute at a time. If really needed, you can create new attributes that combine multiple attributes, and sort them. For example, if you want to sort by graduation year then GPA, you can create a new attribute "Grad yr and GPA" that concatenates both (e.g. 2028, 4.67 becomes "2028;4.67").
+**A**: You can perform multiple rounds of sorting, since sorting by an attribute name will preserve the relative order of candidates that have the same attribute value for that attribute name. For example, if you want to sort primarily by graduation year and have candidates with the same graduation year sorted by GPA, you can do `sort a/GPA`, then `sort a/Graduation Year`.
 
 </p>
 
