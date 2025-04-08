@@ -11,9 +11,9 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_REMOVE_TAG;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.EditCommand;
@@ -108,11 +108,10 @@ public class EditCommandParser implements Parser<EditCommand> {
     private Optional<Set<Attribute>> parseAttributesForEdit(Collection<String> attributes) throws ParseException {
         assert attributes != null;
 
-        if (attributes.isEmpty() || attributes.stream().allMatch(String::isEmpty)) {
+        if (attributes.isEmpty()) {
             return Optional.empty();
         }
-        Collection<String> attributeSet =
-                attributes.stream().filter(s -> !s.isEmpty()).collect(Collectors.toSet());
+        Collection<String> attributeSet = new HashSet<>(attributes);
         return Optional.of(ParserUtil.parseAttributes(attributeSet, false));
     }
 
@@ -123,11 +122,14 @@ public class EditCommandParser implements Parser<EditCommand> {
     private Optional<Set<String>> parseAttributesForRemoval(Collection<String> attributes) throws ParseException {
         assert attributes != null;
 
-        if (attributes.isEmpty() || attributes.stream().allMatch(String::isEmpty)) {
+        if (attributes.stream().anyMatch(String::isEmpty)) {
+            throw new ParseException(ParserUtil.MESSAGE_MISSING_ARGUMENT_FOR_ATTRIBUTE_NAME);
+        }
+
+        if (attributes.isEmpty()) {
             return Optional.empty();
         }
-        Collection<String> attributeSet =
-                attributes.stream().filter(s -> !s.isEmpty()).collect(Collectors.toSet());
+        Collection<String> attributeSet = new HashSet<>(attributes);
         return Optional.of(ParserUtil.parseRemoveAttributes(attributeSet));
     }
 
