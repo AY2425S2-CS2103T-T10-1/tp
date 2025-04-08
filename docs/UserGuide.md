@@ -318,7 +318,7 @@ Attribute names are case-insensitive. `link a/github=https://github.com/` has th
 
 <box type="warning">
 
-If an attribute corresponds to an invalid link, clicking on it may also copy it instead of opening it.
+If an attribute corresponds to an invalid link (i.e., the app cannot open the site link), clicking on it may also copy it instead of opening it.
 
 It is recommended to include the prefix—such as `https://` or `http://`—as omitting it may cause the link to be recognized as invalid.
 
