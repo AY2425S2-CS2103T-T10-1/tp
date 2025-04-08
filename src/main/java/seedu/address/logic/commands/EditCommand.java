@@ -58,9 +58,9 @@ public class EditCommand extends Command {
     public static final String MESSAGE_EDIT_PERSON_SUCCESS = "Edited Person: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one non-empty field to edit must be provided.";
     public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists in the address book.";
-    public static final String MESSAGE_ATTRIBUTE_DOES_NOT_EXIST = "This person does not have the attribute: %1$s";
+    public static final String MESSAGE_ATTRIBUTE_DOES_NOT_EXIST = "This person does not have the attribute: [%1$s]";
     public static final String MESSAGE_ATTRIBUTE_REMOVED_IMMEDIATELY =
-            "This attribute is being added/edited and removed in the same command: %1$s";
+            "This attribute is being added/edited and removed in the same command: [%1$s]";
     public static final String MESSAGE_TAG_DOES_NOT_EXIST = "This person does not have the tag: %1$s";
     public static final String MESSAGE_TAG_REMOVED_IMMEDIATELY =
             "This tag is being added/edited and removed in the same command: %1$s";
@@ -143,18 +143,18 @@ public class EditCommand extends Command {
 
         if (removedAttributes != null) {
             for (String attrName : removedAttributes) {
-                boolean existsInPrev = prevAttributes == null ? false : prevAttributes.stream()
-                        .anyMatch(attr -> attr.getAttributeName().equals(attrName));
-
-                if (!existsInPrev) {
-                    throw new CommandException(String.format(MESSAGE_ATTRIBUTE_DOES_NOT_EXIST, attrName));
-                }
-
                 boolean existsInUpdated = updatedAttributes == null ? false : updatedAttributes.stream()
                         .anyMatch(attr -> attr.getAttributeName().equals(attrName));
 
                 if (existsInUpdated) {
                     throw new CommandException(String.format(MESSAGE_ATTRIBUTE_REMOVED_IMMEDIATELY, attrName));
+                }
+
+                boolean existsInPrev = prevAttributes == null ? false : prevAttributes.stream()
+                        .anyMatch(attr -> attr.getAttributeName().equals(attrName));
+
+                if (!existsInPrev) {
+                    throw new CommandException(String.format(MESSAGE_ATTRIBUTE_DOES_NOT_EXIST, attrName));
                 }
             }
         }
