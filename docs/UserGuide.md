@@ -523,9 +523,9 @@ Examples:
 * `delete 4`, then `filter a/Graduation Year=2026`, then `undo` will skip over the filtering. It will undo `delete 4` and clear the filter
 
 <div align="center">
-  <img src="images/deleteResult.png" height="340" />
-  <img src="images/filterResult.png" height="340" />
-  <img src="images/undoResult.png" height="340" />
+  <img src="images/deleteResult.png" width="30.12%" />
+  <img src="images/filterResult.png" width="31.8%" />
+  <img src="images/undoResult.png" width="29.7%" />
   <p>Results after typing <code>delete 4</code>, then <code>filter a/Graduation Year=2026</code>, then <code>undo</code></p>
 </div>
 
