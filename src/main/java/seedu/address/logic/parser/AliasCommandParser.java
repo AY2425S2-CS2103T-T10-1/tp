@@ -37,13 +37,18 @@ public class AliasCommandParser implements Parser<AliasCommand> {
         requireNonNull(arg);
         arg = arg.trim();
 
-        Matcher matcher = Pattern.compile("^([^=]+)=(.*)$").matcher(arg);
+        Matcher matcher = Pattern.compile("^([^=]*)=(.*)$").matcher(arg);
 
         if (!matcher.find()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AliasCommand.MESSAGE_USAGE));
         }
 
         String attributeName = matcher.group(1).trim();
+
+        if (attributeName.isEmpty()) {
+            throw new ParseException(ParserUtil.MESSAGE_MISSING_ARGUMENT_FOR_ATTRIBUTE_NAME);
+        }
+
         String siteLink = matcher.group(2).trim();
 
         checkNameInput(attributeName);

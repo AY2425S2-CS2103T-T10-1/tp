@@ -34,7 +34,7 @@ public class ParserUtil {
     public static final String MESSAGE_MISSING_ARGUMENT_FOR_ATTRIBUTE =
             "Attribute names and values cannot be empty.";
 
-    public static final String MESSAGE_MISSING_ARGUMENT_FOR_ATTRIBUTE_NAME = "Attribute name cannot be empty.";
+    public static final String MESSAGE_MISSING_ARGUMENT_FOR_ATTRIBUTE_NAME = "Attribute names cannot be empty.";
 
     public static final String MESSAGE_MISSING_ARGUMENT_FOR_TAG =
             "Tag names cannot be empty.";
