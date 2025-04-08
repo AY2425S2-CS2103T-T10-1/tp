@@ -585,7 +585,7 @@ Here are some tips on website linking. You can manually modify the correspondenc
 
 * If you add multiple linkings with the same attribute name, the site link appearing the first will be used–note that attribute names are case-insensitive.
 
-* Be careful: if the attribute name is empty of invalid (i.e., containing `/`, `\`, or `=`), the app will clear all data!
+* Be careful: if the attribute name is empty or invalid (i.e., containing `/`, `\`, or `=`), the app will clear all data!
 
 </box>
 
