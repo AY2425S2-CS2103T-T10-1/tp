@@ -272,7 +272,6 @@ Examples:
 * For updating an attribute: duplicate attribute names with different values are not allowed.
 * For updating an attribute: duplicate attribute names with same values will not show any warning.
 * For removing an attribute: duplicate attribute names will not show any warning.
-* Empty `a/` and `ra/` parameters will be ignored.
 * If the attribute name already exists for this person, the corresponding attribute value will be updated. Otherwise, the attribute name and attribute value will be added to this person as a new attribute.
 * Removing the attribute only requires you to specify the attribute name.
   * This must be an existing attribute.
