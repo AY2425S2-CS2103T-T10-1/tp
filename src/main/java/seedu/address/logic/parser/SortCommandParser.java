@@ -27,6 +27,8 @@ public abstract class SortCommandParser implements Parser<SortCommand> {
                     + "Any word starts with 'a' or 'd' can be recognised.";
     public static final String MESSAGE_EMPTY_ATTRIBUTE_NAME =
             "The attribute name cannot be empty!";
+    public static final String MESSAGE_EMPTY_ORDER =
+            "The specified order cannot be empty!";
 
     private boolean isContainProhibitedCharacters(String str) {
         return str.chars().anyMatch(c -> PROHIBITED_CHARACTERS.chars().anyMatch(ng -> ng == c));
@@ -74,6 +76,9 @@ public abstract class SortCommandParser implements Parser<SortCommand> {
         boolean isAscending = true;
         if (!orders.isEmpty()) {
             String content = orders.get(0).toLowerCase();
+            if (content.isEmpty()) {
+                throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, MESSAGE_EMPTY_ORDER));
+            }
             if (content.charAt(0) == 'd') {
                 isAscending = false;
             } else if (content.charAt(0) != 'a') {
