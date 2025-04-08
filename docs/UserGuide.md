@@ -387,7 +387,17 @@ Format: `filter a/ATTRIBUTE_NAME=ATTRIBUTE_VALUE…`
   1. You can specify attributes of different names, with multiple values of each. In this case, the 1st rule will be applied first, followed by the 2nd rule (see Examples).
   1. The order of input attributes does not matter (see Examples).
 * Both `ATTRIBUTE_NAME` and `ATTRIBUTE_VALUE` are matched case-insensitively.
-* `ATTRIBUTE_NAME` and `ATTRIBUTE_VALUE` are tolerant of typos. If no attribute with the specified attribute name is found due to a minor typo, the app corrects it with a warning message.
+
+<box type="info">
+
+Additional notes on warning messages:
+
+* Attribute names and values are tolerant of typos. If no attribute is matched due to a minor typo, the app corrects it with a warning message.
+  * For example, `GraduatOIn year` will be corrected to `GraduatIOn year` automatically, if only `Graduation year` exists as an attribute name.
+* If there is no candidate having the specified attribute name/value, warning messages will also be shown.
+  * Note that the check is done independently between name and value. For example, if there are exactly two attributes `Major=Engineering` and `Graduation year=2027`, no warning will be shown by an input `Major=2027`.
+
+</box>
 
 <box type="warning">
 
@@ -396,17 +406,6 @@ Autocorrection is different from autocompletion. For example, `Majo` and `Makor`
 This autocorrection only occurs if at least one candidate has an attribute with this name `Major`. The same logic applies to the attribute value.
 
 To avoid unintentional corrections, autocorrection does not modify the numeric portions of attribute names/values. For example, the attribute value `2022` would not be autocorrected to `2027`, nor would the attribute name `TOEFL 2023` be changed to `TOEFL 2024`.
-
-</box>
-
-<box type="info">
-
-Additional notes on warning messages:
-
-* Attribute names are tolerant of typos. If no attribute is matched due to a minor typo, the app corrects it with a warning message.
-  * For example, `GraduatOIn year` will be corrected to `GraduatIOn year` automatically, if only `Graduation year` exists as an attribute name.
-* If there is no candidate having the specified attribute name/value, warning messages will also be shown.
-  * Note that the check is done independently between name and value. For example, if there are exactly two attributes `Major=Engineering` and `Graduation year=2027`, no warning will be shown by an input `Major=2027`.
 
 </box>
 
