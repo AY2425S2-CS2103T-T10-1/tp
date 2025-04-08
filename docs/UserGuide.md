@@ -619,7 +619,7 @@ Here are some tips on website linking. You can manually modify the correspondenc
 <p>
 
 **Q**: Can I sort students by multiple different attributes?<br>
-**A**: Unfortunately, TalentFolio currently only allows sorting by one attribute at a time. If really needed, you can create new attributes that combine multiple attributes, and sort them. For example, if you want to sort by graduation year then GPA, you can create a new attribute "Grad yr and GPA" that concatenates both (e.g. 2028, 4.67 becomes "2028;4.67").
+**A**: You can perform multiple rounds of sorting, since sorting by an attribute name will preserve the relative order of candidates that have the same attribute value for that attribute name. For example, if you want to sort primarily by graduation year and have candidates with the same graduation year sorted by GPA, you can do `sort a/GPA`, then `sort a/Graduation Year`.
 
 </p>
 
