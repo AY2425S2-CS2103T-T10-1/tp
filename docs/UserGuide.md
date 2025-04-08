@@ -133,7 +133,7 @@ Quick notes on some commands:
 * Extraneous parameters immediately after the command word will be ignored.<br>
   For example: if you type `help 123`, it will be interpreted as `help`.<br>
   For example: if you type `sort t/Excel a/Major`, it will be interpreted as `sort a/Major`.<br>
-  For example: `sort a/Major t/Excel` will not be accepted, since the extra `t/Excel` is after the actual parameter `a/Major`.
+  For example: `sort a/Major t/Excel` will not be accepted, since the extra `t/Excel` is after the actual parameter `a/Major`
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </box>
@@ -180,8 +180,8 @@ Adds a person to the database.
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL [t/TAG]… [a/ATTRIBUTE_NAME=ATTRIBUTE_VALUE]…`
 
 Examples:
-* `add n/John Doe p/98765432 e/johnd@example.com` Adds a person named `John Doe` with phone number `98765432` and email address `johnd@example.com`.
-* `add n/Betsy Crowe t/C++ e/betsycrowe@example.com p/1234567 t/Java a/Major=Data Science and Analytics` Adds a person named `Betsy Crowe` with phone number `1234567`, email address `betsycrowe@example.com`, tags `C++` and `Java`, and an attribute named `Major` with the value `Data Science and Analytics`.
+* `add n/John Doe p/98765432 e/johnd@example.com` adds a person named `John Doe` with phone number `98765432` and email address `johnd@example.com`.
+* `add n/Betsy Crowe t/C++ e/betsycrowe@example.com p/1234567 t/Java a/Major=Data Science and Analytics` adds a person named `Betsy Crowe` with phone number `1234567`, email address `betsycrowe@example.com`, tags `C++` and `Java`, and an attribute named `Major` with the value `Data Science and Analytics`.
 
 <box type="tip">
 
