@@ -56,12 +56,12 @@ public class AliasCommandParserTest {
             Attribute.MESSAGE_CONSTRAINTS_FOR_NAME);
         // Attribute name empty
         assertParseFailure(parser, createAddInput("", link1),
-            ParserUtil.MESSAGE_MISSING_ARGUMENT_FOR_ATTRIBUTE_NAME);
+            String.format(MESSAGE_INVALID_COMMAND_FORMAT, AliasCommand.MESSAGE_USAGE));
         // Empty argument
         assertParseFailure(parser, " " + PREFIX_ATTRIBUTE,
             String.format(MESSAGE_INVALID_COMMAND_FORMAT, AliasCommand.MESSAGE_USAGE));
         assertParseFailure(parser, createAddInput("", ""),
-            ParserUtil.MESSAGE_MISSING_ARGUMENT_FOR_ATTRIBUTE_NAME);
+            String.format(MESSAGE_INVALID_COMMAND_FORMAT, AliasCommand.MESSAGE_USAGE));
         // Missing =
         assertParseFailure(parser, " " + PREFIX_ATTRIBUTE + name1 + " " + link1,
             String.format(MESSAGE_INVALID_COMMAND_FORMAT, AliasCommand.MESSAGE_USAGE));
