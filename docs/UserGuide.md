@@ -130,8 +130,10 @@ Quick notes on some commands:
 * Parameters can be in any order.<br>
   For example: if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 
-* Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
-  For example: if you type `help 123`, it will be interpreted as `help`.
+* Extraneous parameters immediately after the command word will be ignored.<br>
+  For example: if you type `help 123`, it will be interpreted as `help`.<br>
+  For example: if you type `sort t/Excel a/Major`, it will be interpreted as `sort a/Major`.<br>
+  For example: `sort a/Major t/Excel` will not be accepted, since the extra `t/Excel` is after the actual parameter `a/Major`
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </box>
@@ -178,8 +180,8 @@ Adds a person to the database.
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL [t/TAG]… [a/ATTRIBUTE_NAME=ATTRIBUTE_VALUE]…`
 
 Examples:
-* `add n/John Doe p/98765432 e/johnd@example.com` Adds a person named `John Doe` with phone number `98765432` and email address `johnd@example.com`.
-* `add n/Betsy Crowe t/C++ e/betsycrowe@example.com p/1234567 t/Java a/Major=Data Science and Analytics` Adds a person named `Betsy Crowe` with phone number `1234567`, email address `betsycrowe@example.com`, tags `C++` and `Java`, and an attribute named `Major` with the value `Data Science and Analytics`.
+* `add n/John Doe p/98765432 e/johnd@example.com` adds a person named `John Doe` with phone number `98765432` and email address `johnd@example.com`.
+* `add n/Betsy Crowe t/C++ e/betsycrowe@example.com p/1234567 t/Java a/Major=Data Science and Analytics` adds a person named `Betsy Crowe` with phone number `1234567`, email address `betsycrowe@example.com`, tags `C++` and `Java`, and an attribute named `Major` with the value `Data Science and Analytics`.
 
 <box type="tip">
 
@@ -286,7 +288,7 @@ Examples:
 
 <box type="info">
 
-**Filters:**
+**Filters (including the `find` command):**
 * After editing a person, they may no longer pass the existing filtering criteria. Hence, to ensure the person is still shown in the UI, filters are cleared after a person is edited.
 
 </box>
@@ -317,6 +319,14 @@ Examples:
 <box type="info">
 
 Attribute names are case-insensitive. `link a/github=https://github.com/` has the same effect as `link a/GitHub=https://github.com/`.
+</box>
+
+<box type="warning">
+
+If an attribute corresponds to an invalid link (i.e., the app cannot open the site link), clicking on it may also copy it instead of opening it.
+
+It is recommended to include the prefix—such as `https://` or `http://`—as omitting it may cause the link to be recognized as invalid.
+
 </box>
 
 <box type="tip">
@@ -392,7 +402,17 @@ Format: `filter a/ATTRIBUTE_NAME=ATTRIBUTE_VALUE…`
   1. You can specify attributes of different names, with multiple values of each. In this case, the 1st rule will be applied first, followed by the 2nd rule (see Examples).
   1. The order of input attributes does not matter (see Examples).
 * Both `ATTRIBUTE_NAME` and `ATTRIBUTE_VALUE` are matched case-insensitively.
-* `ATTRIBUTE_NAME` and `ATTRIBUTE_VALUE` are tolerant of typos. If no attribute with the specified attribute name is found due to a minor typo, the app corrects it with a warning message.
+
+<box type="info">
+
+Additional notes on warning messages:
+
+* Attribute names and values are tolerant of typos. If no attribute is matched due to a minor typo, the app corrects it with a warning message.
+  * For example, `GraduatOIn year` will be corrected to `GraduatIOn year` automatically, if only `Graduation year` exists as an attribute name.
+* If there is no candidate having the specified attribute name/value, warning messages will also be shown.
+  * Note that the check is done independently between name and value. For example, if there are exactly two attributes `Major=Engineering` and `Graduation year=2027`, no warning will be shown by an input `Major=2027`.
+
+</box>
 
 <box type="warning">
 
@@ -401,17 +421,6 @@ Autocorrection is different from autocompletion. For example, `Majo` and `Makor`
 This autocorrection only occurs if at least one candidate has an attribute with this name `Major`. The same logic applies to the attribute value.
 
 To avoid unintentional corrections, autocorrection does not modify the numeric portions of attribute names/values. For example, the attribute value `2022` would not be autocorrected to `2027`, nor would the attribute name `TOEFL 2023` be changed to `TOEFL 2024`.
-
-</box>
-
-<box type="info">
-
-Additional notes on warning messages:
-
-* Attribute names are tolerant of typos. If no attribute is matched due to a minor typo, the app corrects it with a warning message.
-  * For example, `GraduatOIn year` will be corrected to `GraduatIOn year` automatically, if only `Graduation year` exists as an attribute name.
-* If there is no candidate having the specified attribute name/value, warning messages will also be shown.
-  * Note that the check is done independently between name and value. For example, if there are exactly two attributes `Major=Engineering` and `Graduation year=2027`, no warning will be shown by an input `Major=2027`.
 
 </box>
 
@@ -581,7 +590,7 @@ Here are some tips on website linking. You can manually modify the correspondenc
 
 * If you add multiple linkings with the same attribute name, the site link appearing the first will be used–note that attribute names are case-insensitive.
 
-* Be careful: if the attribute name is empty of invalid (i.e., containing `/`, `\`, or `=`), the app will clear all data!
+* Be careful: if the attribute name is empty or invalid (i.e., containing `/`, `\`, or `=`), the app will clear all data!
 
 </box>
 
@@ -653,7 +662,6 @@ Here are some tips on website linking. You can manually modify the correspondenc
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 1. **If you minimize the Help Window** and then run the `help` command (or use the `Help` menu, or the keyboard shortcut `F1`) again, the original Help Window will remain minimized, and no new Help Window will appear. The remedy is to manually restore the minimized Help Window.
 1. **If using Linux or Unix**, clicking on links will not open them. Instead, the link will be copied to the system clipboard, and a window will appear to notify you that the link has been copied. You will have to paste the link into your browser manually.
-1. **If an attribute corresponds to an invalid link**, clicking on it may also copy it instead of opening it.
 1. **If names, phone numbers, emails, tags, or attributes are too long**, the data may not display correctly and may be truncated with "...". You can expand the window width to view the complete text.
 
 --------------------------------------------------------------------------------------------------------------------
@@ -667,7 +675,8 @@ Here are some tips on website linking. You can manually modify the correspondenc
 | **Add**  | `add n/NAME p/PHONE_NUMBER e/EMAIL [t/TAG]… [a/ATTRIBUTE_NAME=ATTRIBUTE_VALUE]…` <br> Example: `add n/James Ho p/22224444 e/jamesho@example.com t/C++ t/Java a/Major=Data Science and Analytics` |
 | **List** | `list` |
 | **Edit** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [t/TAG]… [rt/TAG]… [a/ATTRIBUTE_NAME=ATTRIBUTE_VALUE]… [ra/ATTRIBUTE_NAME]…` <br> Example: `edit 2 n/James Lee e/jameslee@example.com` |
-| **Link** | `link a/ATTRIBUTE_NAME=SITE_LINK` |
+| **Link (to add a link)** | `link a/ATTRIBUTE_NAME=SITE_LINK` |
+| **Link (to remove a link)** | `link ra/ATTRIBUTE_NAME` |
 | **Find** | `find KEYWORD…`<br> Example: `find James Jake` |
 | **Delete** | `delete INDEX`<br> Example: `delete 3` |
 | **Clear** | `clear` |

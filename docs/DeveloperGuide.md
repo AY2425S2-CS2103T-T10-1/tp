@@ -652,3 +652,6 @@ Team size: 5
 
 1. **Warn on duplicate contact info (phone number and email addresses)**<br>
    Currently, the user can add (or edit) candidates with duplicate phone numbers or email addresses. However, since it is quite rare for different candidates to share the same contact information, we plan to enable a warning when such a duplicate is detected. This will help the user notice and correct potential errors more easily.
+
+1. **Prohibit extraneous parameters**
+   Currently, the app accepts commands like `filter t/Excel a/Major=Computer Science` and `link 1 a/github=https://github.com/`. However, this flexibility might make it difficult for the user to notice misunderstandings–such as they can filter candidates by both tags and attributes, or add associations between attribute names and site links at the individual candidate level. To reduce the risk of such misconceptions, we plan to prohibit extraneous parameters in these commands.
